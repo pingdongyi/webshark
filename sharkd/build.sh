@@ -18,14 +18,16 @@ mkdir build
 cd build
 
 # Compile sharkd static, and without optional libraries
-cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_C_FLAGS_RELEASE="-O3 -pipe" \
-	-DENABLE_STATIC=ON -DENABLE_PLUGINS=OFF -DDISABLE_WERROR=ON \
-	-DBUILD_wireshark=OFF -DBUILD_tshark=OFF -DBUILD_sharkd=ON -DBUILD_dumpcap=OFF -DBUILD_capinfos=OFF \
-	-DBUILD_captype=OFF -DBUILD_randpkt=OFF -DBUILD_dftest=OFF -DBUILD_editcap=OFF -DBUILD_mergecap=OFF \
-	-DBUILD_reordercap=OFF -DBUILD_text2pcap=OFF -DBUILD_fuzzshark=OFF \
-	-DBUILD_androiddump=OFF -DBUILD_randpktdump=OFF -DBUILD_udpdump=OFF \
-	-DENABLE_PCAP=OFF -DENABLE_GNUTLS=OFF \
-	../
+cmake -DCMAKE_BUILD_TYPE=RELEASE \
+  -DCMAKE_C_FLAGS_RELEASE="-O3 -pipe -Wno-error=maybe-uninitialized" \
+  -DENABLE_STATIC=ON -DENABLE_PLUGINS=OFF -DDISABLE_WERROR=ON \
+  -DBUILD_wireshark=OFF -DBUILD_tshark=OFF -DBUILD_sharkd=ON -DBUILD_dumpcap=OFF \
+  -DBUILD_capinfos=OFF -DBUILD_captype=OFF -DBUILD_randpkt=OFF -DBUILD_dftest=OFF \
+  -DBUILD_editcap=OFF -DBUILD_mergecap=OFF -DBUILD_reordercap=OFF -DBUILD_text2pcap=OFF \
+  -DBUILD_fuzzshark=OFF -DBUILD_androiddump=OFF -DBUILD_randpktdump=OFF -DBUILD_udpdump=OFF \
+  -DENABLE_PCAP=OFF -DENABLE_GNUTLS=OFF \
+  ../
+
 
 make -j8
 cd run
