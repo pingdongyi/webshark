@@ -23,7 +23,7 @@ jobs:
         run: |
           ls -alF
           rm -rf ./web/*
-          curl -fsSL github.com/qxip/webshark-ui/releases/latest/download/latest.zip -O
+          curl -fsSL github.com/pingdongyi/webshark-ui/releases/latest/download/latest.zip -O
           unzip latest.zip -d ./web
           
       - name: Log in to the Container registry

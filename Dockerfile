@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /out /usr/src /var/run
 WORKDIR /usr/src
 
-RUN git clone --depth=1 https://gitlab.com/wireshark/wireshark.git /usr/src/wireshark
+RUN git clone --depth=1 --branch release-3.6 https://gitlab.com/wireshark/wireshark.git /usr/src/wireshark
 
 WORKDIR /usr/src/wireshark
 COPY sharkd/* /usr/src/wireshark/
