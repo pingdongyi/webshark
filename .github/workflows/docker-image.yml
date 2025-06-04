@@ -39,5 +39,5 @@ jobs:
           context: .
           push: true
           tags: |
-             ghcr.io/qxip/webshark:latest
-             ghcr.io/qxip/webshark:${{ github.event.release.tag_name }}
+             ghcr.io/pingdongyi/webshark:latest
+             ghcr.io/pingdongyi/webshark:${{ github.event.release.tag_name }}

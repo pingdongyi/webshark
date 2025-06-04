@@ -16,7 +16,7 @@ RUN sed -i 's/\r$//' build.sh && chmod +x build.sh && ./build.sh
 WORKDIR /usr/src
 RUN mkdir web \
  && cd web \
- && wget github.com/pingdongyi/webshark-ui/releases/1.0.5/download/latest.zip \
+ && wget github.com/pingdongyi/webshark-ui/releases/latest/download/latest.zip \
  && unzip latest.zip \
  && rm -rf latest.zip \
  && sed -i 's|href="/"|href="/webshark/"|g' index.html
